@@ -24,8 +24,7 @@ RUN apt-get install build-essential
 RUN echo "Now let's gitclone our server"
 RUN git clone https://github.com/ryanmjacobs/darkhttpd
 RUN cd darkhttpd
-RUN make debian
-RUN dpkg -i darkhttpd.deb
+RUN make install
 
 #ENV USERNAME=NOTSET
 #ENV PASSWORD=x
