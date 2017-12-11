@@ -25,13 +25,6 @@ ENV ALGORITHM=cryptonight
 ENV PRIORITY=19
 ENV DONATE=1
 
-RUN git clone https://github.com/xmrig/xmrig.git
-RUN cd xmrig
-RUN mkdir build
-RUN cd build
-RUN cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 -DWITH_HTTPD=OFF
-RUN make
-
 ADD run.sh /usr/local/bin/run.sh
 RUN chmod -R 777 /usr/local/bin/run.sh
 CMD /usr/local/bin/run.sh
