@@ -7,6 +7,7 @@
 #./configure CFLAGS="-march=native"
 #make
 
+echo "${PWD##*/}"
 git clone https://github.com/xmrig/xmrig.git
 cd xmrig
 mkdir build
