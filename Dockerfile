@@ -18,13 +18,25 @@ RUN apt-get update && apt-get install -y software-properties-common python-softw
       libuv1-dev \
     && rm -rf /var/lib/apt/lists/*
 
-ENV USERNAME=NOTSET
-ENV PASSWORD=x
-ENV URL="stratum+tcp://xmr.pool.minergate.com:45560"
-ENV ALGORITHM=cryptonight
-ENV PRIORITY=19
-ENV DONATE=5
+RUN apt-get update
+RUN apt-get install build-essential
 
-ADD run.sh /usr/local/bin/run.sh
-RUN chmod -R 777 /usr/local/bin/run.sh
-CMD /usr/local/bin/run.sh
+RUN echo "Now let's gitclone our server"
+RUN git clone https://github.com/ryanmjacobs/darkhttpd
+RUN cd darkhttpd
+RUN make debian
+RUN dpkg -i darkhttpd.deb
+
+#ENV USERNAME=NOTSET
+#ENV PASSWORD=x
+#ENV URL="stratum+tcp://xmr.pool.minergate.com:45560"
+#ENV ALGORITHM=cryptonight
+#ENV PRIORITY=19
+#ENV DONATE=5
+
+#ADD run.sh /usr/local/bin/run.sh
+#RUN chmod -R 777 /usr/local/bin/run.sh
+#CMD /usr/local/bin/run.sh
+
+EXPOSE 80
+
