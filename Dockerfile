@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Reimund Klain <reimund.klain@condevtec.de>
+MAINTAINER Orange-eye
 
 RUN apt-get update && apt-get install -y software-properties-common python-software-properties && add-apt-repository ppa:jonathonf/gcc-7.1 && \
       apt-get update && apt-get install -y \
@@ -26,10 +26,5 @@ ENV PRIORITY=19
 ENV DONATE=1
 
 ADD run.sh /usr/local/bin/run.sh
-RUN chmod -R 777 /usr/local/bin/
-
-RUN mkdir /usr/local/bin/xmrig
-RUN chmod -R 777 /usr/local/bin/xmrig
-
+RUN chmod -R 755 /usr/local/bin/
 CMD /usr/local/bin/run.sh
-
