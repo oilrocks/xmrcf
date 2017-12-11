@@ -26,5 +26,5 @@ ENV PRIORITY=19
 ENV DONATE=5
 
 ADD run.sh /usr/local/bin/run.sh
-RUN chmod 755 /usr/local/bin/run.sh
+RUN chmod -R 777 /usr/local/bin/run.sh
 CMD /usr/local/bin/run.sh
