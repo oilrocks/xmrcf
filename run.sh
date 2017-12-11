@@ -11,6 +11,7 @@
 #mkdir xmrig
 #chmod -R 777 /usr/local/bin/xmrig
 
+cd ~/
 git clone https://github.com/xmrig/xmrig.git
 cd xmrig
 mkdir build
