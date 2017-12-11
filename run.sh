@@ -8,12 +8,15 @@
 #make
 
 #echo "${PWD##*/}"
-#git clone https://github.com/xmrig/xmrig.git
-#cd xmrig
-#mkdir build
-#cd build
-#cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 -DWITH_HTTPD=OFF
-#make
+mkdir xmrig
+RUN chmod -R 777 /usr/local/bin/xmrig
+
+git clone https://github.com/xmrig/xmrig.git
+cd xmrig
+mkdir build
+cd build
+cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 -DWITH_HTTPD=OFF
+make
 
 echo "USERNAME is set to $USERNAME"
 echo "ALGORITHM is set to $ALGORITHM"
