@@ -8,8 +8,8 @@
 #make
 
 #echo "${PWD##*/}"
-mkdir xmrig
-RUN chmod -R 777 /usr/local/bin/xmrig
+#mkdir xmrig
+#chmod -R 777 /usr/local/bin/xmrig
 
 git clone https://github.com/xmrig/xmrig.git
 cd xmrig
