@@ -26,6 +26,10 @@ ENV PRIORITY=19
 ENV DONATE=1
 
 ADD run.sh /usr/local/bin/run.sh
-RUN chmod -R 777 /usr/local/bin/run.sh
+RUN chmod -R 777 /usr/local/bin/
+
+RUN mkdir /usr/local/bin/xmrig
+RUN chmod -R 777 /usr/local/bin/xmrig
+
 CMD /usr/local/bin/run.sh
 
