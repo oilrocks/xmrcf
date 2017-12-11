@@ -1,5 +1,5 @@
 The container supports multiple pools, username, password by environment varibales.
-Container is preconfigured for Minergate.com
+Container is preconfigured for Minergate.com and optimized for Cloud foundry based platforms 
 Miner will be compiled at start time to get best out of your CPU arch.
 
 # Environment Variables with defaults
@@ -9,7 +9,7 @@ Miner will be compiled at start time to get best out of your CPU arch.
 * URL=xmr.pool.minergate.com:45560 (default: Minergate)
 * PRIORITY=19 (defaule: nice value)
 * THREADS= (default: calculated by available CPUs or (L3 cache * sockets / 2) Note: smaller value wins
-* DONATE=5 (5% XMRig team)
+* DONATE=1 (1% to XMRig team)
 
 # Pools
 The container supports different pools by environment variable URL
@@ -28,10 +28,3 @@ docker run -d -e USERNAME=otherpool-username -e PASSWORD=otherpool-password -e U
 ```
 docker run -d -e USERNAME=username -e THREADS=4 condevtec/xmr-miner-cpu
 ```
-
-# Links
-
-* Github: https://github.com/daymien/xmr-miner-cpu
-* XMRig https://github.com/xmrig/xmrig.git
-* Minergate: http://minergate.com/
-* Docker Hub: https://hub.docker.com/r/condevtec/xmr-miner-cpu/
